@@ -9,7 +9,7 @@ app.use(express.json())
 const PORT = process.env.PORT || 5000
 app.use(bodyParser.json())
 app.use(cors())
-const router = express.Router()
+const stripe = require("stripe")('sk_test_51L0rFmLYwJHp3nTSG0R2Rz3ToMYwkgmXYPbOCcrNVqvpLyRPRL8vLt3oICpxpj3L60U99Ryuqom1uCo1iwGGSijt00tO1ZIVAE');
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.075x5.mongodb.net/assignment-12?retryWrites=true&w=majority`;
 
 mongoose.connect(uri, {
