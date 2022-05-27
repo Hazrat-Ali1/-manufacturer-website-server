@@ -7,7 +7,7 @@ const User = new mongoose.model('User', userSchemas)
 const jwt = require('jsonwebtoken')
 const verifyJWT = require('../verifyJWT')
 
-router.get('/', verifyJWT, async (req, res) => {
+router.get('/', async (req, res) => {
     User.find({}, (error, result) => {
         if (error) {
             res.status(501).send({ message: "server side Error" })
@@ -17,7 +17,7 @@ router.get('/', verifyJWT, async (req, res) => {
         }
     })
 })
-router.get('/:email', verifyJWT, (req, res) => {
+router.get('/:email',  (req, res) => {
     const email = req.params.email
     User.findOne({ email: email }, (error, result) => {
         if (error) {

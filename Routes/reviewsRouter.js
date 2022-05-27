@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
         }
     })
 })
-router.post('/',verifyJWT, (req, res) => {
+router.post('/', (req, res) => {
     const newReview = new Review(req.body)
     newReview.save((err, data) => {
         if (err) {
