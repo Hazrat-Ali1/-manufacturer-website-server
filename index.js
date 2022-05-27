@@ -26,7 +26,7 @@ app.use('/order', require('./Routes/orderRouter'))
 app.use('/review', require('./Routes/reviewsRouter'))
 app.use('/profile', require('./Routes/profileRouter'))
 
-router.post('/payment/create-payment-intent', async (req, res) => {
+app.post('/payment/create-payment-intent', async (req, res) => {
     const data = req.body
     const price = parseInt(data.price)
     const amount = price * 100
